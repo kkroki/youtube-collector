@@ -53,11 +53,9 @@ public class TopMgr {
 			con = pool.getConnection();
 			sql = "insert into tbl_top100(entry,artist,title,regdate) values(?,?,?,now())";
 			pstmt = con.prepareStatement(sql);
-
 			pstmt.setString(1, "entry");
 			pstmt.setString(2, "artist");
 			pstmt.setString(3, "title");
-
 			pstmt.executeUpdate();
 			return;
 		} catch (Exception e) {
